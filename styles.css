@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Magazine Letter';
+    src: url('fonts/Magazine-Cutouts-Font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('mc.gif') no-repeat center center fixed;
+    z-index: -999;
+    background-size: cover;
+}
+.shape {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 3s ease-out;
+    border: 2px solid #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background-clip: padding-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    filter: brightness(0.9);
+    clip-path: polygon(
+        0% 20%, 5% 10%, 10% 15%, 15% 5%, 20% 15%, 
+        25% 10%, 30% 25%, 35% 0%, 40% 20%, 50% 10%, 
+        60% 25%, 65% 5%, 70% 20%, 75% 10%, 80% 30%, 
+        85% 15%, 90% 5%, 100% 20%, 100% 100%, 
+        0% 100%
+    );
+    transform: rotate(calc(5deg * var(--random-rotation)));
+    background-image: url('fonts/wrinkle.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -998;
+}
+.shape.circle {
+    background-color: #00bcd4;
+    box-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
+}
+.shape.square {
+    background-color: #ffe600;
+    box-shadow: 0 0 10px #ffe600, 0 0 20px #ffe600;
+}
+.shape.triangle {
+    border-bottom: 30px solid #ff0000;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+}
+.magazine-words {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.9;
+    font-family: 'Magazine Letter', sans-serif;
+    color: #ff0000;
+    z-index: -1;
+}
+.word {
+    position: absolute;
+    white-space: nowrap;
+    color: #ff0055;
+}
